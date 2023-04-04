@@ -233,6 +233,9 @@ class mod_choicegroup_mod_form extends moodleform_mod
             case CHOICEGROUP_SORTGROUPS_NAME:
                 $systemdefault = array(CHOICEGROUP_SORTGROUPS_SYSTEMDEFAULT => get_string('systemdefault_name', 'choicegroup'));
                 break;
+            case CHOICEGROUP_SORTGROUPS_DBID:
+                $systemdefault = array(CHOICEGROUP_SORTGROUPS_SYSTEMDEFAULT => get_string('systemdefault_databaseid', 'choicegroup'));
+                break;
         }
 
         $options = array_merge($systemdefault, choicegroup_get_sort_options());

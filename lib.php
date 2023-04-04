@@ -50,6 +50,7 @@ define('CHOICEGROUP_DISPLAY_VERTICAL',    '1');
 define('CHOICEGROUP_SORTGROUPS_SYSTEMDEFAULT',    '0');
 define('CHOICEGROUP_SORTGROUPS_CREATEDATE',    '1');
 define('CHOICEGROUP_SORTGROUPS_NAME',    '2');
+define('CHOICEGROUP_SORTGROUPS_DBID',    '3');
 
 // Ugly hack to make 3.11 and 4.0 work seamlessly.
 if (!defined('FEATURE_MOD_PURPOSE')) {
@@ -870,6 +871,8 @@ function choicegroup_get_sort_column($choicegroup) {
             return 'timecreated';
         case CHOICEGROUP_SORTGROUPS_NAME:
             return 'name';
+        case CHOICEGROUP_SORTGROUPS_DBID:
+            return 'id';
         default:
             return 'timecreated';
     }
@@ -1115,7 +1118,8 @@ function choicegroup_page_type_list($pagetype, $parentcontext, $currentcontext) 
 function choicegroup_get_sort_options() {
     return array (
         CHOICEGROUP_SORTGROUPS_CREATEDATE => get_string('createdate', 'choicegroup'),
-        CHOICEGROUP_SORTGROUPS_NAME => get_string('name', 'choicegroup')
+        CHOICEGROUP_SORTGROUPS_NAME => get_string('name', 'choicegroup'),
+        CHOICEGROUP_SORTGROUPS_DBID => get_string('databaseid', 'choicegroup'),
     );
 }
 
